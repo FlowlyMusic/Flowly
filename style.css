@@ -1,130 +1,103 @@
-/* Genel Ayarlar */
 body {
-    background-color: #121212; /* Koyu arka plan */
-    color: #ffffff;
+    background-color: #121212;
+    color: white;
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-bottom: 80px;
 }
 
-/* Üst Arama Alanı */
-.search-container {
-    width: 100%;
-    background-color: #2196F3; /* MYT Mavisi */
+/* MYT Mavisi Üst Bar */
+.header {
+    background-color: #2196F3;
     padding: 15px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 h1 {
     margin: 0 0 10px 0;
     font-size: 20px;
-    font-weight: bold;
+    text-align: center;
 }
 
-input[type="text"] {
-    width: 90%;
+.search-box {
+    display: flex;
+    gap: 8px;
+}
+
+input {
+    flex: 1;
     padding: 12px;
-    border-radius: 5px;
+    border-radius: 4px;
     border: none;
     font-size: 16px;
     outline: none;
 }
 
-button#mainSearchBtn {
-    margin-top: 10px;
-    width: 95%;
-    padding: 10px;
-    background-color: #fff;
-    color: #2196F3;
+button#searchBtn {
+    padding: 10px 20px;
+    background-color: #1565C0;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     font-weight: bold;
     cursor: pointer;
 }
 
-/* Şarkı Listesi Kapsayıcı */
-#results {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.song-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* MYT Tarzı Şarkı Satırı */
-.song-item {
+/* Şarkı Listesi Tasarımı */
+.song-card {
     display: flex;
     align-items: center;
-    background: #1e1e1e;
-    padding: 10px;
-    border-radius: 5px;
-    border-bottom: 1px solid #333;
+    padding: 12px;
+    border-bottom: 1px solid #222;
+    background: #1a1a1a;
 }
 
-.song-img {
-    width: 55px;
-    height: 55px;
+.song-card img {
+    width: 60px;
+    height: 60px;
     border-radius: 4px;
-    margin-right: 12px;
+    margin-right: 15px;
     object-fit: cover;
-    background-color: #333;
 }
 
 .song-info {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    flex: 1;
 }
 
-.song-title {
-    font-size: 14px;
+.song-name {
     font-weight: bold;
-    color: #efefef;
-    margin: 0 0 4px 0;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    font-size: 14px;
+    margin: 0 0 5px 0;
+    color: #fff;
 }
 
-.song-author {
+.song-sub {
     font-size: 12px;
     color: #999;
-    margin: 0 0 8px 0;
 }
 
-/* Buton Grubu */
-.action-buttons {
+.action-btns {
     display: flex;
     gap: 8px;
+    margin-top: 8px;
 }
 
-.btn-small {
-    flex: 1;
-    border: none;
-    border-radius: 3px;
-    padding: 6px 0;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.btn-p { background: #4CAF50; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; } /* Oynat */
+.btn-m { background: #2196F3; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 12px; cursor: pointer; } /* MP3 */
 
-.btn-music { background-color: #2196F3; } /* Mavi - MP3 */
-.btn-video { background-color: #9C27B0; } /* Mor - Video */
-.btn-play  { background-color: #4CAF50; } /* Yeşil - Oynat */
+/* Alt Çalma Çubuğu */
+#player-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #212121;
+    padding: 12px;
+    border-top: 2px solid #2196F3;
+    text-align: center;
+    font-size: 14px;
+    color: #2196F3;
+    font-weight: bold;
+}
