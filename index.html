@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowly - Müzik Dünyan</title>
+    <title>Flowly</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="search-container">
+    <div class="header">
         <h1>Flowly</h1>
-        <input type="text" id="query" placeholder="Şarkı, sanatçı veya link yapıştır...">
-        <button onclick="searchMusic()" style="margin-top:10px; padding:10px; border-radius:20px; width:100%;">BUL VE ÇAL</button>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Şarkı ara kanka...">
+            <button onclick="searchMusic()">BUL</button>
+        </div>
     </div>
 
-    <div id="results"></div>
+    <div id="resultsList">
+        </div>
+
+    <div id="player-bar">
+        <span id="now-playing">Şarkı seçilmedi</span>
+        <div id="hidden-engine"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
